@@ -1,21 +1,23 @@
 /* Mobile: 375px
-- Desktop: 1440px */
+- Desktop: 1440px 
+font size 12px*/
 
 
 :root {
-    --darkBlue: hsl(238, 29%, 16%);
-    --softRed: hsl(14, 88%, 65%);
-    --softViolet: hsl(273, 75%, 66%); 
-    --softBlue: hsl(240, 73%, 65%);
-    --veryDarkGrayBlue: hsl(237, 12%, 33%);
-    --darkGrayBlue: hsl(240, 6%, 50%);
-    --lightGrayBlue: hsl(240, 5%, 91%)
+    --text-dark-blue: hsl(238, 29%, 16%);
+    --text-red: hsl(14, 88%, 65%);
+    --gradient-violet: hsl(273, 75%, 66%); 
+    --gradient-blue: hsl(240, 73%, 65%);
+    --text-vdarkgray: hsl(237, 12%, 33%);
+    --text-darkgray: hsl(240, 6%, 50%);
+    --divider-gray: hsl(240, 5%, 91%)
 }
 
 
 html {
     font-size: 100%;
     box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
 }
 
 *, *::before, *::after {
@@ -23,14 +25,63 @@ html {
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    font-family: 'Kumbh Sans', sans-serif;
+    min-height: 100vh;
+    margin: 0; 
+    padding: 3rem;
     font-size: 0.7rem;
-    background: linear-gradient(var(--softViolet), var(--softBlue))
+    background: linear-gradient(var(--gradient-violet), 
+    var(--gradient-blue));  
+    
+    
 }
 
+
+.card {
+    background-color: #fff;
+    border-radius: 2rem;
+    max-width: 56rem;
+
+}
+
+.desktop-img {
+    width: 100%;
+    height: auto;
+    max-width: 25rem;
+}
+
+
+
+.card-text{
+
+}
+
+@media (min-width: 56rem) {
+   .card {
+       display: flex;
+       margin: 6rem auto; 
+       background-image: url("./images/bg-pattern-desktop.svg");
+       background-size: contain;
+       background-repeat: no-repeat;
+       
+}
+
+.card-image {
+    flex: 1;
+
+}
+
+.card-text {
+    flex: 1;
+}
+
+
+}
+
+
+
+
+
+/* FOOTER */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
