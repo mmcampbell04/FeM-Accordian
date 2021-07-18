@@ -27,8 +27,9 @@ html {
 body {
     min-height: 100vh;
     margin: 0; 
-    padding: 3rem;
-    font-size: 0.7rem;
+    padding: 0;
+    font-size: 0.75rem;
+    color: var(--text-darkgray);
     background: linear-gradient(var(--gradient-violet), 
     var(--gradient-blue));  
     
@@ -36,47 +37,138 @@ body {
 }
 
 
-.card {
-    background-color: #fff;
-    border-radius: 2rem;
+.card-container {
+    margin: 9rem 2rem;
     max-width: 56rem;
+    background-color: #fff;
+    border-radius: 1.5rem;
 
+}
+
+.card-content {
+    padding: 1rem;
 }
 
 .desktop-img {
     width: 100%;
     height: auto;
-    max-width: 25rem;
+    /* max-width: 25rem; */
 }
 
 
 
-.card-text{
+.card-text h1 {
+    color: var(--text-vdarkgray);
+    text-align: center;
+    font-size: 2rem;
+    margin: 0;
+}
+
+
+/* Accordian content */
+
+.accordian-item {
+    border-bottom: 1px solid var(--divider-gray);
+}
+
+.header {
+    margin-bottom: 0;
+    
+}
+
+.accordian-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: none;
+    background: #fff;
+    padding: 1rem 1.25rem 1rem 0;
+    margin: 0;
+    font-family: inherit;
+    color: var(--text-vdarkgray);
+}
+
+.accordian-btn:hover {
+    color: var(--text-red);
+    cursor: pointer;
+    
+}
+
+.accordian-btn::after {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-left: auto;
+    content: " ";
+    background-image: url("./images/icon-arrow-down.svg");
+    background-repeat: no-repeat;
+    background-size: 0.75rem;
 
 }
 
+
+.accordian-body {
+    line-height: 1.5;
+    padding: 1rem 0;
+    display: none;
+}
+
+.accordian-wrapper {
+    margin-bottom: 1.5rem;
+}
+
+
+/* for transition */
+
+.collapsing {
+    height: 0;
+    overflow: hidden;
+    transition: height .35s ease;
+}
+
+
+ /* for desktop */
 @media (min-width: 56rem) {
-   .card {
-       display: flex;
-       margin: 6rem auto; 
-       background-image: url("./images/bg-pattern-desktop.svg");
-       background-size: contain;
-       background-repeat: no-repeat;
+   .card-container {
+    display: flex;
+    border: 1px solid red;
+    margin: 6rem auto;
+    
+}
+
+.card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: .5rem;
+    grid-template-rows: 1fr;
+    padding: 4.25rem 5.5rem;
+    border: 2px solid black;
        
+
+}
+
+.card-text h1 {
+    text-align: left;
+}
+
+.card-image, .card-text {
+    
+    border: 1px solid yellow;
+
 }
 
 .card-image {
-    flex: 1;
+    grid-column: 1 / 2;
+    padding-right: 1rem;
+}
 
 }
 
-.card-text {
-    flex: 1;
+.card-image {
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
-
-
-}
-
 
 
 
